@@ -30,7 +30,7 @@ Route::resource('properties', 'PropertyController')->middleware('auth', 'role:ad
 
 Route::delete('properties/{id}', 'PropertyController@destroy');
 
-Route::resource('publications', 'PublicationController')->middleware('auth', 'role:admin');
+Route::resource('publications', 'PublicationsController')->middleware('auth', 'role:admin');
 
 Route::delete('publications/{id}', 'PublicationsController@destroy');
 

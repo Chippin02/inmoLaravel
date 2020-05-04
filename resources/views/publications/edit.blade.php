@@ -11,19 +11,19 @@
             <input type="text" name="pubTitle" value="{{$publication->pubTitle}}" class="form form-control" required>
             Propiedad asociada
             <br/>
-            <input class="list-group " list="property_id" name="property_id" value="{{\App\Http\Controllers\PublicationController::getProperty($publication->property_id)}}" required>
+            <input class="list-group " list="property_id" name="property_id" value="{{\App\Http\Controllers\PublicationsController::getProperty($publication->property_id)}}" required>
             <datalist id="property_id">
                 @foreach($properties as $property)
                     <option value="{{$property->name}}">{{$property->name}}
                         @if(Auth::user()->hasRole('admin'))
-                             ({{\App\Http\Controllers\PublicationController::getUserMail($property->user_id)}})
+                             ({{\App\Http\Controllers\PublicationsController::getUserMail($property->user_id)}})
                         @endif
                     </option>
                 @endforeach
             </datalist>
             Tipo
             <br/>
-            <input class="list-group " list="type" name="type" value="{{\App\Http\Controllers\PublicationController::getType($publication->type)}}" required>
+            <input class="list-group " list="type" name="type" value="{{\App\Http\Controllers\PublicationsController::getType($publication->type)}}" required>
             <datalist id="type">
                 @foreach($types as $type)
                     <option value="{{$type->name}}">{{$type->name}}</option>

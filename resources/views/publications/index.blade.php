@@ -23,15 +23,15 @@
                     <td><a href="{{route('publications.show', $publication->id)}}">{{$publication->pubTitle}}</a></td>
                     <td>
                         <a href="{{route('properties.show', $publication->property_id)}}">
-                            {{\App\Http\Controllers\PublicationController::getProperty($publication->property_id)}}
+                            {{\App\Http\Controllers\PublicationsController::getProperty($publication->property_id)}}
                         </a>
                     </td>
-                    <td>{{\App\Http\Controllers\PublicationController::getType($publication->type)}}</td>
+                    <td>{{\App\Http\Controllers\PublicationsController::getType($publication->type)}}</td>
                     <td>{{$publication->price}} €</td>
                     @if(Auth::user()->hasRole('admin'))
                         <td>
-                            {{\App\Http\Controllers\PublicationController::getUserName($publication->publisher_id)}}
-                             ({{\App\Http\Controllers\PublicationController::getUserMail($publication->publisher_id)}})
+                            {{\App\Http\Controllers\PublicationsController::getUserName($publication->publisher_id)}}
+                             ({{\App\Http\Controllers\PublicationsController::getUserMail($publication->publisher_id)}})
                         </td>
                     @endif
                     <td style="display: flex; flex-direction: row;">

@@ -10,7 +10,7 @@ use App\Publication_Types;
 
 use Illuminate\Http\Request;
 
-class PublicationController extends Controller {
+class PublicationsController extends Controller {
     /**
      * Display a listing of the resource.
      *
