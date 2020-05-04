@@ -8,10 +8,10 @@
             @method('PUT')
             Título oferta
             <br/>
-            <input type="text" name="pubTitle" value="{{$publication->pubTitle}}" class="form form-control">
+            <input type="text" name="pubTitle" value="{{$publication->pubTitle}}" class="form form-control" required>
             Propiedad asociada
             <br/>
-            <input class="list-group " list="property_id" name="property_id" value="{{\App\Http\Controllers\PublicationController::getProperty($publication->property_id)}}">
+            <input class="list-group " list="property_id" name="property_id" value="{{\App\Http\Controllers\PublicationController::getProperty($publication->property_id)}}" required>
             <datalist id="property_id">
                 @foreach($properties as $property)
                     <option value="{{$property->name}}">{{$property->name}}
@@ -23,7 +23,7 @@
             </datalist>
             Tipo
             <br/>
-            <input class="list-group " list="type" name="type" value="{{\App\Http\Controllers\PublicationController::getType($publication->type)}}">
+            <input class="list-group " list="type" name="type" value="{{\App\Http\Controllers\PublicationController::getType($publication->type)}}" required>
             <datalist id="type">
                 @foreach($types as $type)
                     <option value="{{$type->name}}">{{$type->name}}</option>

@@ -23,7 +23,7 @@
             Propietario
             <br/>
             @if(Auth::user()->hasRole('admin'))
-                <input class="list-group " list="email" name="email" value="{{\App\Http\Controllers\PropertyController::getMail($property->user_id)}}">
+                <input class="list-group " list="email" name="email" value="{{\App\Http\Controllers\PropertyController::getMail($property->user_id)}}" required>
                 <datalist id="email">
                     @foreach($users as $user)
                         <option value="{{$user->email}}">{{$user->email}}</option>

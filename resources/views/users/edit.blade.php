@@ -14,7 +14,7 @@
             <input type="text" name="email" value="{{$user->email}}" class="form form-control" required>
             Contraseña
             <br/>
-            <input type="text" name="password" value="" class="form form-control" required>
+            <input type="text" name="password" value="" class="form form-control">
             <br/>
             <input class="list-group " list="role" name="role" value="{{\App\Http\Controllers\UserController::getRole($user->id)->description}}" required>
             <datalist id="role">

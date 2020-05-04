@@ -22,7 +22,7 @@
             Propietario
             <br/>
             @if(Auth::user()->hasRole('admin'))
-                <input class="list-group " list="email" name="email" value="">
+                <input class="list-group " list="email" name="email" value="" required>
                 <datalist id="email">
                     @foreach($users as $user)
                         <option value="{{$user->email}}">{{$user->name}} ({{$user->email}})</option>
