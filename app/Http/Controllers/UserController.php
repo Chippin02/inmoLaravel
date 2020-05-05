@@ -12,18 +12,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller {
-
+    public function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        if (auth()->user()->hasRole('admin')) {
-            $users = User::all();
-            return view('users.index', compact('users'));
-        }
-        else { return redirect()->route('home'); }
+    public function index(Request $request) {
+        $request->user()->authorizeRoles(['admin']);
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
 
     /**
