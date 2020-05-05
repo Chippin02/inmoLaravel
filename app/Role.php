@@ -13,7 +13,7 @@ class Role extends Model {
 
     public function role_user() {
         return $this
-            ->hasMany('App\User')
+            ->hasMany('App\Role_user')
             ->withTimestamps();
     }
 }
